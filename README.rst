@@ -1,14 +1,35 @@
-Flower
+Flowest
 ======
+.. image:: images/support.svg :target: https://gitter.im/python-flowest/support
+.. image:: images/pypi.svg :target: https://gitter.im/python-flowest/support
+.. image:: images/github.svg :target: https://gitter.im/python-flowest/support
+.. image:: images/dockerhub.svg :target: https://gitter.im/python-flowest/support
 
-.. image:: https://github.com/mher/flower/workflows/Build/badge.svg
-    :target: https://github.com/mher/flower/actions
 
-.. image:: https://img.shields.io/pypi/v/flower.svg
-    :target: https://pypi.python.org/pypi/flower
+This repo is a fork of https://github.com/mher/flower. It integreates new
+features that are not yet merge to the flower branch and in general will be more
+active than the original flower repo.
 
-.. image:: https://travis-ci.org/mher/flower.svg?branch=master
-        :target: https://travis-ci.org/mher/flower
+Where to get it
+---------------
+You can use docker image:
+``` bash
+docker image pull
+```
+Or, from Docker Hub
+``` bash
+docker image pull
+```
+
+If you want to install it from pypi
+``` bash
+pip install flowest
+```
+support
+-------
+If you need help you can get support on gitter:
+https://gitter.im/python-flowest/support
+
 
 Flower is a web based tool for monitoring and administrating Celery clusters.
 
@@ -62,7 +83,7 @@ Or terminate executing task by: ::
 
 Or receive task completion events in real-time:
 
-.. code-block:: javascript 
+.. code-block:: javascript
 
     var ws = new WebSocket('ws://localhost:5555/api/task/events/task-succeeded/');
     ws.onmessage = function (event) {
@@ -73,17 +94,6 @@ For more info checkout `API Reference`_ and `examples`_.
 
 .. _API Reference: https://flower.readthedocs.io/en/latest/api.html
 .. _examples: http://nbviewer.ipython.org/urls/raw.github.com/mher/flower/master/docs/api.ipynb
-
-Installation
-------------
-
-PyPI version: ::
-
-    $ pip install flower
-
-Development version: ::
-
-    $ pip install https://github.com/mher/flower/zipball/master
 
 Usage
 -----
@@ -118,6 +128,8 @@ License
 
 Flower is licensed under BSD 3-Clause License. See the LICENSE file
 in the top distribution directory for the full license text.
+
+All changes made by Gabriel-Desharnais are under MIT license
 
 Getting help
 ------------
