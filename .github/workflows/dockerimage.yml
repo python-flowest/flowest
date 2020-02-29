@@ -47,7 +47,7 @@ jobs:
           docker push $IMAGE_ID:$VERSION
 
       - name: Log into dockerhub registry
-        run: echo "${{ secrets.dockerhubpasword }}" | docker login https://hub.docker.com -u ${{ secrets.dockerhubuser }}  --password-stdin
+        run: echo "${{ secrets.dockerhubpasword }}" | docker login -u ${{ secrets.dockerhubuser }}  --password-stdin
 
       - name: Push image on dockerhub
         run: |
