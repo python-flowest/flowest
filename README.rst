@@ -1,9 +1,13 @@
 Flowest
 ======
-.. image:: images/support.svg :target: https://gitter.im/python-flowest/support
-.. image:: images/pypi.svg :target: https://gitter.im/python-flowest/support
-.. image:: images/github.svg :target: https://gitter.im/python-flowest/support
-.. image:: images/dockerhub.svg :target: https://gitter.im/python-flowest/support
+.. image:: images/support.svg  
+    :target: https://gitter.im/python-flowest/support
+.. image:: images/pypi.svg 
+    :target: https://gitter.im/python-flowest/support
+.. image:: images/github.svg 
+    :target: https://gitter.im/python-flowest/support
+.. image:: images/dockerhub.svg 
+    :target: https://gitter.im/python-flowest/support
 
 
 This repo is a fork of https://github.com/mher/flower. It integreates new
