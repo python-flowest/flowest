@@ -1,7 +1,7 @@
 name: Docker
 
 on:
-  push:
+  create:
     # Publish `v1.2.3` tags as releases.
     tags:
       - "*"
@@ -35,7 +35,7 @@ jobs:
           VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
           # Get tag name
           VERSION=${GITHUB_REF/refs\/tags\//}
-          # Use Docker `latest` tag convention 
+          # Use Docker `latest` tag convention
           echo IMAGE_ID=$IMAGE_ID
           echo VERSION=$VERSION
           docker tag image $IMAGE_ID:$VERSION
