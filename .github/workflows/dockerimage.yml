@@ -1,10 +1,10 @@
 name: Docker
 
 on:
-  create:
+  push:
     # Publish `v1.2.3` tags as releases.
     tags:
-      - "*"
+      - '**'
 
 env:
   IMAGE_NAME: flowest
@@ -12,7 +12,7 @@ env:
 jobs:
   # Push image to GitHub Package Registry.
   # See also https://docs.docker.com/docker-hub/builds/
-  create:
+  push:
     # Ensure test job passes before pushing image.
 
     runs-on: ubuntu-latest
