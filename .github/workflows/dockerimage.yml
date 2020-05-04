@@ -12,7 +12,7 @@ env:
 jobs:
   # Push image to GitHub Package Registry.
   # See also https://docs.docker.com/docker-hub/builds/
-  push:
+  create:
     # Ensure test job passes before pushing image.
 
     runs-on: ubuntu-latest
