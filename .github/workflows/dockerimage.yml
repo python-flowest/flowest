@@ -28,7 +28,7 @@ jobs:
         run: |
           # Create version file
           echo "__version__ = "$VERSION > flower/version.py
-          git add /flower/version.py
+          git add flower/version.py
           git commit -m "Bumb version number to "$VERSION flower/version.py
           git push origin ${{ github.head_ref }}
 
