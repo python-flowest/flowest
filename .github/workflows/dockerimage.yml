@@ -21,6 +21,17 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Get version number from tag
+        run: VERSION=${GITHUB_REF/refs\/tags\//}
+
+      - name: Recreate version file
+        run: |
+          # Create version file
+          echo "__version__ = "$VERSION > /flower/version.py
+          git add /flower/version.py
+          git commit -m "Bumb version number to "$VERSION /flower/version.py
+          git push origin ${{ github.head_ref }}
+
       - name: Build image
         run: docker build . --file Dockerfile --tag image
 
