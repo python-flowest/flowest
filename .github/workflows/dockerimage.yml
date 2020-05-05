@@ -35,7 +35,8 @@ jobs:
           VERSION=${GITHUB_REF/refs\/tags\//}
           # Use Docker `latest` tag convention
           echo "yyyyyyyyyy"
-          echo $(git tag | sort -V | tail -n1)
+          echo $(git tag)
+          echo "nnnnnnnnn"
           if [ $(git tag | sort -V | tail -n1) == VERSION ]
           then
           docker tag image $IMAGE_ID:latest
