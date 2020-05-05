@@ -29,9 +29,8 @@ jobs:
           # Create version file
           echo "__version__ = "$VERSION > flower/version.py
           git add flower/version.py
-          echo "dddddd"${GITHUB_REF##*/}
           git -c user.email="auto@flowest.flowest" -c user.name="flowest-bot" commit -m "Bumb version number to "$VERSION flower/version.py
-          git push origin ${{ github.head_ref }}
+          git push origin master
 
       - name: Build image
         run: docker build . --file Dockerfile --tag image
