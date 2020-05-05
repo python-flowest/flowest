@@ -36,10 +36,12 @@ jobs:
           # Use Docker `latest` tag convention
           echo "yyyyyyyyyy"
           git fetch --all --tags
-          echo $(git tag)
+          echo $(git tag | sort -V | tail -n1)
+          echo $VERSION
           echo "nnnnnnnnn"
-          if [ $(git tag | sort -V | tail -n1) == VERSION ]
+          if [ $(git tag | sort -V | tail -n1) == $VERSION ]
           then
+          echo
           docker tag image $IMAGE_ID:latest
           docker push $IMAGE_ID:latest
           fi
@@ -55,7 +57,7 @@ jobs:
           # Get tag name
           VERSION=${GITHUB_REF/refs\/tags\//}
           # Use Docker `latest` tag convention
-          if [ $(git tag | sort -V | tail -n1) == VERSION ]
+          if [ $(git tag | sort -V | tail -n1) == $VERSION ]
           then
           docker tag image $IMAGE_ID:latest
           docker push $IMAGE_ID:latest
