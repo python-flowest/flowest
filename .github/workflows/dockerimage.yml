@@ -34,6 +34,7 @@ jobs:
           # Get tag name
           VERSION=${GITHUB_REF/refs\/tags\//}
           # Use Docker `latest` tag convention
+          echo $(git tag | sort -V | tail -n1)
           if [ $(git tag | sort -V | tail -n1) == VERSION ]
           then
           docker tag image $IMAGE_ID:latest
