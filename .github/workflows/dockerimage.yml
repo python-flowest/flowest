@@ -35,6 +35,7 @@ jobs:
           VERSION=${GITHUB_REF/refs\/tags\//}
           # Use Docker `latest` tag convention
           echo "yyyyyyyyyy"
+          git fetch --all --tags
           echo $(git tag)
           echo "nnnnnnnnn"
           if [ $(git tag | sort -V | tail -n1) == VERSION ]
