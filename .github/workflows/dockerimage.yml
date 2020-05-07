@@ -24,13 +24,12 @@ jobs:
 
       - name: Recreate version file
         run: |
-          echo "dddddddd"${{ github.event.ref_type }}
           # Create version file
           echo "__version__ = "$VERSION > flower/version.py
           git checkout -b temp
           git add flower/version.py
           git -c user.email="auto@flowest.flowest" -c user.name="flowest-bot" commit -m "Bumb version number to "$VERSION flower/version.py
-          echo $VERSION
+          echo "dd"$VERSION
           git tag -f $VERSION
           git push -f --tag
 
