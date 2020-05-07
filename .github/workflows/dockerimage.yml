@@ -30,7 +30,8 @@ jobs:
           git checkout -b temp
           git add flower/version.py
           git -c user.email="auto@flowest.flowest" -c user.name="flowest-bot" commit -m "Bumb version number to "$VERSION flower/version.py
-          git push origin temp
+          git tag -f $VERSION
+          git push -f --tag
 
       - name: Build image
         run: docker build . --file Dockerfile --tag image
