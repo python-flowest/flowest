@@ -1,10 +1,9 @@
 name: Docker
 
 on:
-  push:
-    # Publish `v1.2.3` tags as releases.
-    tags:
-      - '**'
+  release:
+    types: [created]
+
 
 env:
   IMAGE_NAME: flowest
@@ -12,7 +11,7 @@ env:
 jobs:
   # Push image to GitHub Package Registry.
   # See also https://docs.docker.com/docker-hub/builds/
-  push:
+  release:
     # Ensure test job passes before pushing image.
 
     runs-on: ubuntu-latest
@@ -28,9 +27,10 @@ jobs:
         run: |
           # Create version file
           echo "__version__ = "$VERSION > flower/version.py
+          git checkout -b temp
           git add flower/version.py
           git -c user.email="auto@flowest.flowest" -c user.name="flowest-bot" commit -m "Bumb version number to "$VERSION flower/version.py
-          git push origin master
+          #git push origin temp
 
       - name: Build image
         run: docker build . --file Dockerfile --tag image
