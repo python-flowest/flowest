@@ -1,8 +1,7 @@
 name: Docker
 
 on:
-  release:
-    types: [created]
+  create
 
 
 env:
@@ -11,7 +10,7 @@ env:
 jobs:
   # Push image to GitHub Package Registry.
   # See also https://docs.docker.com/docker-hub/builds/
-  deploy:
+  push:
     # Ensure test job passes before pushing image.
 
     runs-on: ubuntu-latest
