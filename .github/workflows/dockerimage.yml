@@ -24,7 +24,7 @@ jobs:
       - name: Recreate version file
         run: |
           echo "dddddddd"${{ github.event_name }}
-          echo "eeeeeeee"${{ github.github.actor }}
+          echo "eeeeeeee"${{ github.actor }}
           # Create version file
           echo "__version__ = "$VERSION > flower/version.py
           git checkout -b temp
