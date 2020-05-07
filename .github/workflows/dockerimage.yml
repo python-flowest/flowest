@@ -30,6 +30,7 @@ jobs:
           git checkout -b temp
           git add flower/version.py
           git -c user.email="auto@flowest.flowest" -c user.name="flowest-bot" commit -m "Bumb version number to "$VERSION flower/version.py
+          echo $VERSION
           git tag -f $VERSION
           git push -f --tag
 
