@@ -20,7 +20,10 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Get version number from tag
-        run: export VERSION=${{ github.event.ref }}
+        run: |
+          export VERSION=${{ github.event.ref }}
+          echo "dd"$VERSION
+          echo "ee"${{ github.event.ref }}
 
       - name: Recreate version file
         run: |
