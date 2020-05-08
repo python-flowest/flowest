@@ -27,7 +27,7 @@ jobs:
 
       - name: Recreate version file
         run: |
-          echo "dd"${{ github.event.ref }}
+          echo "dd"$VERSION
           # Create version file
           echo "__version__ = "$VERSION > flower/version.py
           git checkout -b temp
