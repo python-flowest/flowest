@@ -22,12 +22,9 @@ jobs:
       - name: Get version number from tag
         run: |
           echo "::set-env name=VERSION::${{ github.event.ref }}"
-          echo "dd"$VERSION
-          echo "ee"${{ github.event.ref }}
 
       - name: Recreate version file
         run: |
-          echo "dd"$VERSION
           # Create version file
           echo "__version__ = "$VERSION > flower/version.py
           git checkout -b temp
@@ -75,3 +72,7 @@ jobs:
           fi
           docker tag image $IMAGE_ID:$VERSION
           docker push $IMAGE_ID:$VERSION
+
+      - name: Build package and push on pypi
+        run: |
+          # Get started
