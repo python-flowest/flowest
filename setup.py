@@ -30,10 +30,10 @@ classifiers = [s.strip() for s in classes.split('\n') if s]
 
 
 setup(
-    name='flower',
+    name='flowest',
     version=__version__,
     description='Celery Flower',
-    long_description=open('README.rst').read(),
+#    long_description=open('README.rst').read(),
     author='Mher Movsisyan',
     author_email='mher.movsisyan@gmail.com',
     url='https://github.com/mher/flower',
