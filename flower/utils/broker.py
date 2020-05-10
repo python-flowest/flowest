@@ -194,9 +194,7 @@ class RedisSentinel(RedisBase):
         try:
             master_name = broker_options['master_name']
         except KeyError:
-            raise ValueError(
-                'master_name is required for Sentinel broker'
-                )
+            raise ValueError('master_name is required for Sentinel broker')
         return master_name
 
     def _get_redis_client(self):

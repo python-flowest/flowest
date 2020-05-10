@@ -127,7 +127,7 @@ class FlowerCommand(Command):
 
     def is_flower_envvar(self, name):
         return name.startswith(self.ENV_VAR_PREFIX) and\
-               name[len(self.ENV_VAR_PREFIX):].lower() in default_options
+            name[len(self.ENV_VAR_PREFIX):].lower() in default_options
 
     def print_banner(self, ssl):
         if not options.unix_socket:

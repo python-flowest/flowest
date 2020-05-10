@@ -8,7 +8,7 @@ from tests.unit import AsyncHTTPTestCase
 
 
 inspect_response = {
-    'celery@worker1':  [
+    'celery@worker1': [
         "tasks.add",
         "tasks.sleep"
     ],

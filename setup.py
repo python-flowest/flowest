@@ -1,7 +1,4 @@
 #!/usr/bin/env python
-import os
-import re
-
 from setuptools import setup, find_packages
 from flower import __version__
 
@@ -33,7 +30,8 @@ setup(
     name='flowest',
     version=__version__,
     description='Celery Flower',
-#    long_description=open('README.rst').read(),
+    long_description=open('README.md').read(),
+    long_description_content_type='text/markdown',
     author='Mher Movsisyan',
     author_email='mher.movsisyan@gmail.com',
     url='https://github.com/mher/flower',

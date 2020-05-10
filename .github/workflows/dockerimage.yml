@@ -1,8 +1,6 @@
-name: Docker
-
+name: "Tag build and publish"
 on:
   create
-
 
 env:
   IMAGE_NAME: flowest

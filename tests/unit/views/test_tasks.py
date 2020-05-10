@@ -48,7 +48,7 @@ class TasksTest(AsyncHTTPTestCase):
         params['order[0][dir]'] = 'asc'
 
         r = self.get('/tasks/datatable?' + '&'.join(
-                        map(lambda x: '%s=%s' % x, params.items())))
+            map(lambda x: '%s=%s' % x, params.items())))
 
         table = json.loads(r.body.decode("utf-8"))
         self.assertEqual(200, r.code)
@@ -80,7 +80,7 @@ class TasksTest(AsyncHTTPTestCase):
         params['order[0][dir]'] = 'asc'
 
         r = self.get('/tasks/datatable?' + '&'.join(
-                        map(lambda x: '%s=%s' % x, params.items())))
+            map(lambda x: '%s=%s' % x, params.items())))
 
         table = json.loads(r.body.decode("utf-8"))
         self.assertEqual(200, r.code)
@@ -118,7 +118,7 @@ class TasksTest(AsyncHTTPTestCase):
         params['order[0][dir]'] = 'asc'
 
         r = self.get('/tasks/datatable?' + '&'.join(
-                        map(lambda x: '%s=%s' % x, params.items())))
+            map(lambda x: '%s=%s' % x, params.items())))
 
         table = json.loads(r.body.decode("utf-8"))
         self.assertEqual(200, r.code)
@@ -166,7 +166,7 @@ class TasksTest(AsyncHTTPTestCase):
         params['order[0][dir]'] = 'asc'
 
         r = self.get('/tasks/datatable?' + '&'.join(
-                        map(lambda x: '%s=%s' % x, params.items())))
+            map(lambda x: '%s=%s' % x, params.items())))
 
         table = json.loads(r.body.decode("utf-8"))
         self.assertEqual(200, r.code)
@@ -209,7 +209,7 @@ class TasksTest(AsyncHTTPTestCase):
         params['length'] = '1'
 
         r = self.get('/tasks/datatable?' + '&'.join(
-                        map(lambda x: '%s=%s' % x, params.items())))
+            map(lambda x: '%s=%s' % x, params.items())))
 
         table = json.loads(r.body.decode("utf-8"))
         self.assertEqual(200, r.code)
@@ -227,7 +227,7 @@ class TasksTest(AsyncHTTPTestCase):
         params['length'] = '1'
 
         r = self.get('/tasks/datatable?' + '&'.join(
-                        map(lambda x: '%s=%s' % x, params.items())))
+            map(lambda x: '%s=%s' % x, params.items())))
 
         table = json.loads(r.body.decode("utf-8"))
         self.assertEqual(200, r.code)

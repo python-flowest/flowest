@@ -108,7 +108,6 @@ class BaseHandler(tornado.web.RequestHandler):
         if custom_format_task:
             try:
                 task = custom_format_task(copy.copy(task))
-            except:
+            except Exception:
                 logger.exception("Failed to format '%s' task", task.uuid)
         return task
-

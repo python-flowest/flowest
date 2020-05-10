@@ -412,7 +412,7 @@ Return length of all active queues
 
         if not queue_names:
             queue_names = set([self.capp.conf.CELERY_DEFAULT_QUEUE]) |\
-                        set([q.name for q in self.capp.conf.CELERY_QUEUES or [] if q.name])
+                set([q.name for q in self.capp.conf.CELERY_QUEUES or [] if q.name])
 
         queues = yield broker.queues(sorted(queue_names))
         self.write({'active_queues': queues})
