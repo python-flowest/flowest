@@ -1,6 +1,5 @@
 .git
 .gitignore
-README.md
 build
 Dockerfile
 dist
