@@ -3,8 +3,6 @@ from setuptools import setup, find_packages
 from flower import __version__
 
 
-
-
 def get_requirements(filename):
     return open('requirements/' + filename).read().splitlines()
 
